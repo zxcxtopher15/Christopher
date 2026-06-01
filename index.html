@@ -1,621 +1,524 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
-	<title>John Christopher Olalia</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="images/freelance.ico" type="image/x-icon">
-	<link rel="stylesheet" href="css/main.bundle.css">
-	<link rel="stylesheet" href="css/mycss.css">
-	<script src="js/4e5a72c756.js"></script>
+	<script>document.documentElement.classList.add("js");</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>John Christopher Olalia — Web / Software / Android Developer</title>
+	<meta name="description"
+		content="John Christopher Olalia — Web, Software & Android Developer based in Nueva Ecija, Philippines. Building clean, reliable software with PHP, Laravel, Java, and modern web technologies.">
+	<meta name="author" content="John Christopher Olalia">
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="John Christopher Olalia — Developer Portfolio">
+	<meta property="og:description"
+		content="Web, Software & Android Developer crafting clean, reliable software.">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="images/pic.png">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+		rel="stylesheet">
+
+	<!-- Tailwind CSS -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						base: '#0a0a0f',
+						surface: '#12121a',
+						card: '#16161f',
+						line: '#26263340',
+						accent: '#7c5cff',
+						accent2: '#22d3ee',
+						muted: '#9ca3af',
+					},
+					fontFamily: {
+						sans: ['Inter', 'system-ui', 'sans-serif'],
+						mono: ['JetBrains Mono', 'monospace'],
+					},
+				},
+			},
+		};
+	</script>
+
+	<!-- Icons -->
+	<script src="https://kit.fontawesome.com/4e5a72c756.js" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-grey">
-	<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-		<div class="navbar-brand">
-			<div class="navbar-item is-hidden-desktop">
-				<a href="https://github.com/zxcxtopher15" class="icon is-large has-text-light">
-					<i class="fab fa-2x fa-github"></i>
+<body class="bg-base text-gray-200 font-sans antialiased selection:bg-accent/30">
+
+	<!-- Animated background -->
+	<div class="bg-grid" aria-hidden="true"></div>
+	<div class="bg-glow" aria-hidden="true"></div>
+
+	<!-- ===================== NAV ===================== -->
+	<header id="nav"
+		class="fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b border-transparent">
+		<nav class="mx-auto max-w-6xl px-5 lg:px-8 h-16 flex items-center justify-between">
+			<a href="#hero" class="font-mono font-bold text-lg tracking-tight text-white">
+				<span class="text-accent">&lt;</span>jco<span class="text-accent">/&gt;</span>
+			</a>
+
+			<ul class="hidden md:flex items-center gap-7 text-sm font-medium text-muted">
+				<li><a class="nav-link" href="#about">About</a></li>
+				<li><a class="nav-link" href="#skills">Skills</a></li>
+				<li><a class="nav-link" href="#experience">Experience</a></li>
+				<li><a class="nav-link" href="#projects">Projects</a></li>
+				<li><a class="nav-link" href="#contact">Contact</a></li>
+			</ul>
+
+			<div class="flex items-center gap-3">
+				<a href="resume.html"
+					class="hidden sm:inline-flex items-center gap-2 rounded-lg border border-accent/40 bg-accent/10 px-4 py-2 text-sm font-semibold text-white hover:bg-accent/20 transition">
+					<i class="fa-regular fa-file-lines"></i> Resume
 				</a>
+				<a href="https://github.com/zxcxtopher15" target="_blank" rel="noopener"
+					class="text-muted hover:text-white text-xl transition" aria-label="GitHub">
+					<i class="fa-brands fa-github"></i>
+				</a>
+				<button id="menu-btn" class="md:hidden text-white text-xl" aria-label="Open menu">
+					<i class="fa-solid fa-bars"></i>
+				</button>
 			</div>
+		</nav>
+
+		<!-- Mobile menu -->
+		<div id="mobile-menu"
+			class="md:hidden hidden border-t border-line bg-surface/95 backdrop-blur px-5 py-4">
+			<ul class="flex flex-col gap-3 text-sm font-medium text-muted">
+				<li><a class="mobile-link block py-1" href="#about">About</a></li>
+				<li><a class="mobile-link block py-1" href="#skills">Skills</a></li>
+				<li><a class="mobile-link block py-1" href="#experience">Experience</a></li>
+				<li><a class="mobile-link block py-1" href="#projects">Projects</a></li>
+				<li><a class="mobile-link block py-1" href="#contact">Contact</a></li>
+				<li><a class="mobile-link block py-1 text-accent" href="resume.html">Resume</a></li>
+			</ul>
 		</div>
-		<div class="navbar-menu">
-			<div class="navbar-end">
-				<div class="navbar-item">
-					<a href="https://github.com/zxcxtopher15" class="icon is-large has-text-light">
-						<i class="fab fa-2x fa-github"></i>
-					</a>
+	</header>
+
+	<main class="relative z-10">
+
+		<!-- ===================== HERO ===================== -->
+		<section id="hero" class="min-h-screen flex items-center pt-24 pb-16">
+			<div class="mx-auto max-w-6xl px-5 lg:px-8 grid lg:grid-cols-12 gap-10 items-center w-full">
+				<div class="lg:col-span-7 reveal">
+					<p class="font-mono text-accent2 text-sm mb-4">
+						<span class="text-muted">$</span> whoami
+					</p>
+					<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.05]">
+						John Christopher<br>Olalia
+					</h1>
+					<p class="mt-5 text-xl sm:text-2xl font-semibold">
+						<span class="text-muted">I build </span>
+						<span id="typed" class="bg-gradient-to-r from-accent to-accent2 bg-clip-text text-transparent"></span><span class="caret">_</span>
+					</p>
+					<p class="mt-6 max-w-xl text-muted leading-relaxed">
+						Web, software, and Android developer from Nueva Ecija, Philippines. I turn
+						client requirements into clean, reliable applications — from PHP & Laravel web
+						systems to Java desktop tools and Android apps.
+					</p>
+
+					<div class="mt-8 flex flex-wrap items-center gap-4">
+						<a href="#projects"
+							class="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent/90 hover:-translate-y-0.5 transition">
+							<i class="fa-solid fa-layer-group"></i> View my work
+						</a>
+						<a href="resume.html"
+							class="inline-flex items-center gap-2 rounded-lg border border-line bg-white/5 px-6 py-3 font-semibold text-white hover:bg-white/10 transition">
+							<i class="fa-regular fa-file-pdf"></i> Resume
+						</a>
+					</div>
+
+					<div class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+						<span><i class="fa-solid fa-location-dot mr-2 text-accent"></i>Gapan City, Nueva Ecija, PH</span>
+						<span><i class="fa-solid fa-phone mr-2 text-accent"></i>+63 936 401 4582</span>
+						<a href="mailto:roschristopher15@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope mr-2 text-accent"></i>roschristopher15@gmail.com</a>
+					</div>
+				</div>
+
+				<div class="lg:col-span-5 flex justify-center lg:justify-end reveal">
+					<div class="relative">
+						<div class="absolute -inset-4 rounded-full bg-gradient-to-tr from-accent/30 to-accent2/30 blur-2xl"></div>
+						<img src="images/pic.png" alt="John Christopher Olalia"
+							class="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full object-cover ring-2 ring-white/10 shadow-2xl">
+						<span class="absolute bottom-4 right-2 flex items-center gap-2 rounded-full bg-card/90 backdrop-blur border border-line px-3 py-1.5 text-xs font-medium">
+							<span class="h-2 w-2 rounded-full bg-green-400 animate-pulse"></span> Open to work
+						</span>
+					</div>
 				</div>
 			</div>
-		</div>
-	</nav>
+		</section>
 
-	<section class="hero is-light bg-grey">
-		<div class="hero-body">
-			<div class="container">
-				<div class="columns is-vcentered">
-					<div class="column is-4 has-text-centered">
-						<figure class="image is-200x200">
-							<img class="is-rounded pic" src="images/pic.png" alt="Profile Picture">
-						</figure>
+		<!-- ===================== ABOUT ===================== -->
+		<section id="about" class="py-20 sm:py-24">
+			<div class="mx-auto max-w-6xl px-5 lg:px-8">
+				<div class="section-head reveal">
+					<span class="section-num">01</span>
+					<h2 class="section-title">About me</h2>
+				</div>
+				<div class="grid lg:grid-cols-3 gap-8 mt-10">
+					<div class="lg:col-span-2 space-y-4 text-muted leading-relaxed reveal">
+						<p>
+							I'm a <span class="text-white font-medium">BS in Information Technology</span> graduate
+							from Nueva Ecija University of Science and Technology, now working as a web developer
+							and taking on freelance projects across web, software, and mobile.
+						</p>
+						<p>
+							What started as curiosity about Java programming grew into building full systems:
+							PHP & CodeIgniter web platforms, Laravel applications, Java records-management software,
+							and Android apps wired to live web APIs. I care about writing code that's readable,
+							maintainable, and actually solves the problem in front of the client.
+						</p>
+						<p>
+							I'm always learning — picking up new frameworks, sharpening fundamentals, and looking
+							for opportunities to ship work that matters.
+						</p>
 					</div>
-					<div class="column is-8">
-						<div class="card">
-							<div class="card-content">
-								<h1 class="title name text-black is-3 mb-5">
-									John Christopher Olalia
-								</h1>
-								<h2 class=" has-text-primary mb-2">
-									<div class="console-container"><i class="fa fa-briefcase mr-2"
-											aria-hidden="true"></i><span id="text"></span>
-										<div id="console">_</div>
-									</div>
-								</h2>
-								<p class="has-text-primary mb-2">
-									<i class="fa fa-map-marker mr-2" aria-hidden="true"></i> Gapan City, Nueva Ecija, Philippines
+					<div class="grid grid-cols-2 gap-4 reveal">
+						<div class="stat-card">
+							<div class="stat-num">5+</div>
+							<div class="stat-label">Years coding</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-num">15+</div>
+							<div class="stat-label">Projects shipped</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-num">3</div>
+							<div class="stat-label">Platforms: Web · Desktop · Mobile</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-num">BSIT</div>
+							<div class="stat-label">NEUST, 2024</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ===================== SKILLS ===================== -->
+		<section id="skills" class="py-20 sm:py-24">
+			<div class="mx-auto max-w-6xl px-5 lg:px-8">
+				<div class="section-head reveal">
+					<span class="section-num">02</span>
+					<h2 class="section-title">Skills &amp; tools</h2>
+				</div>
+
+				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+					<div class="skill-group reveal">
+						<h3 class="skill-group-title"><i class="fa-solid fa-code text-accent"></i> Frontend</h3>
+						<div class="skill-tags">
+							<span class="skill-tag">HTML</span>
+							<span class="skill-tag">CSS</span>
+							<span class="skill-tag">JavaScript</span>
+							<span class="skill-tag">jQuery</span>
+							<span class="skill-tag">Bootstrap</span>
+							<span class="skill-tag">Tailwind</span>
+						</div>
+					</div>
+					<div class="skill-group reveal">
+						<h3 class="skill-group-title"><i class="fa-solid fa-server text-accent"></i> Backend &amp; DB</h3>
+						<div class="skill-tags">
+							<span class="skill-tag">PHP</span>
+							<span class="skill-tag">Laravel</span>
+							<span class="skill-tag">CodeIgniter</span>
+							<span class="skill-tag">Node.js</span>
+							<span class="skill-tag">MySQL</span>
+							<span class="skill-tag">Firebase</span>
+						</div>
+					</div>
+					<div class="skill-group reveal">
+						<h3 class="skill-group-title"><i class="fa-solid fa-mobile-screen text-accent"></i> Software &amp; Mobile</h3>
+						<div class="skill-tags">
+							<span class="skill-tag">Java</span>
+							<span class="skill-tag">Android Studio</span>
+							<span class="skill-tag">Ionic</span>
+							<span class="skill-tag">C#</span>
+							<span class="skill-tag">C++</span>
+							<span class="skill-tag">Arduino</span>
+						</div>
+					</div>
+					<div class="skill-group reveal">
+						<h3 class="skill-group-title"><i class="fa-solid fa-screwdriver-wrench text-accent"></i> Tools</h3>
+						<div class="skill-tags">
+							<span class="skill-tag">Git</span>
+							<span class="skill-tag">GitHub</span>
+							<span class="skill-tag">WordPress</span>
+							<span class="skill-tag">Photoshop</span>
+							<span class="skill-tag">MS Office</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ===================== EXPERIENCE ===================== -->
+		<section id="experience" class="py-20 sm:py-24">
+			<div class="mx-auto max-w-6xl px-5 lg:px-8">
+				<div class="section-head reveal">
+					<span class="section-num">03</span>
+					<h2 class="section-title">Experience</h2>
+				</div>
+
+				<div class="mt-10 space-y-6">
+					<article class="timeline-card reveal">
+						<div class="flex items-start gap-4">
+							<img src="images/affirm.png" alt="Affirm Technology Inc." class="h-12 w-12 rounded-lg bg-white object-contain p-1 flex-shrink-0">
+							<div class="flex-1">
+								<div class="flex flex-wrap items-baseline justify-between gap-2">
+									<h3 class="text-lg font-semibold text-white">
+										Web Developer ·
+										<a href="https://www.affirm-technology.com/" target="_blank" rel="noopener" class="text-accent hover:underline">Affirm Technology Inc.</a>
+									</h3>
+									<span class="text-xs font-mono text-muted">May 2024 — Present</span>
+								</div>
+								<p class="mt-2 text-sm text-muted leading-relaxed">
+									International technology &amp; digital-transformation firm serving 6,000+ corporate
+									customers across 6 countries. Started via OJT, then absorbed as a part-time then
+									full web developer.
 								</p>
-								<p class="has-text-primary mb-2">
-									<i class="fa fa-mobile mr-2" aria-hidden="true"></i> +63 936 401 4582
-								</p>
-								<p class="has-text-primary mb-4">
-									<a href="John Christopher Olalia Resume.pdf" download>
-										<i class="fas fa-file-pdf mr-2" aria-hidden="true"></i><strong> Resume</strong>
-									</a>
-								</p>
-								<p class="text-sm mb-4">
-									I am a recent graduate with a degree in Bachelor of Science in Information Technology (BSIT) from the Philippines, focusing on web, Android, and Java development. As an enthusiastic developer, I am passionate about building innovative solutions and applying algorithms to solve real-world industry challenges.
-								</p>
-								<p class="text-sm mb-4">
-									My expertise includes PHP, CodeIgniter, Java, Android development, JavaScript, jQuery, and MySQL. I am eager to continue learning and exploring various tech stacks while sharing my knowledge with others in the field.
-								</p>
+								<ul class="mt-3 space-y-1.5 text-sm text-muted list-inside">
+									<li class="exp-li">Built a SPED therapy web platform for a special-education program, end to end.</li>
+									<li class="exp-li">Diagnosed and fixed bugs and implemented feature requests across live systems.</li>
+									<li class="exp-li">Collaborated with the team on modern web practices and client deliverables.</li>
+								</ul>
+								<div class="mt-4 flex flex-wrap gap-2">
+									<span class="chip">PHP</span><span class="chip">CodeIgniter</span><span class="chip">MySQL</span>
+									<span class="chip">JavaScript</span><span class="chip">jQuery</span><span class="chip">Bootstrap</span>
+								</div>
 							</div>
 						</div>
-					</div>
+					</article>
+
+					<article class="timeline-card reveal">
+						<div class="flex items-start gap-4">
+							<img src="images/freelancer.png" alt="Freelance" class="h-12 w-12 rounded-lg bg-white object-contain p-1 flex-shrink-0">
+							<div class="flex-1">
+								<div class="flex flex-wrap items-baseline justify-between gap-2">
+									<h3 class="text-lg font-semibold text-white">Freelance Developer</h3>
+									<span class="text-xs font-mono text-muted">2019 — Present</span>
+								</div>
+								<p class="mt-2 text-sm text-muted leading-relaxed">
+									Independent developer delivering custom software and consultancy to local
+									businesses across web, desktop, and mobile.
+								</p>
+								<ul class="mt-3 space-y-1.5 text-sm text-muted">
+									<li class="exp-li">Gathered requirements, then designed, built, tested, and maintained tailored applications.</li>
+									<li class="exp-li">Optimized database connections and server configurations for reliability.</li>
+									<li class="exp-li">Partnered with clients to improve business processes through technology.</li>
+								</ul>
+								<div class="mt-4 flex flex-wrap gap-2">
+									<span class="chip">Laravel</span><span class="chip">PHP</span><span class="chip">Java</span>
+									<span class="chip">Android Studio</span><span class="chip">Firebase</span><span class="chip">Ionic</span>
+									<span class="chip">Node.js</span><span class="chip">C#</span><span class="chip">Arduino</span>
+								</div>
+							</div>
+						</div>
+					</article>
 				</div>
 			</div>
-		</div>
-	</section>
-	
-	<section class="section">
-		<div class="container">
-			<h1 class="title">Skills</h1>
-			<hr>
-			<div class="row">
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/html-logo.png" class="skills-logo" alt="html logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							HTML
-						</div>
-					</div>
+		</section>
+
+		<!-- ===================== PROJECTS ===================== -->
+		<section id="projects" class="py-20 sm:py-24">
+			<div class="mx-auto max-w-6xl px-5 lg:px-8">
+				<div class="section-head reveal">
+					<span class="section-num">04</span>
+					<h2 class="section-title">Featured projects</h2>
 				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/css-logo.png" class="skills-logo" alt="css logo">
+
+				<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+					<!-- Project 1 -->
+					<button class="project-card reveal text-left" data-modal="modal-web">
+						<div class="project-img">
+							<img src="images/website.png" alt="Web Systems" loading="lazy">
 						</div>
-						<div class="card-skill-name has-text-centered">
-							CSS
+						<div class="p-5">
+							<div class="flex items-center justify-between">
+								<h3 class="font-semibold text-white">Web Systems</h3>
+								<i class="fa-solid fa-arrow-up-right-from-square text-muted group-hover:text-accent transition"></i>
+							</div>
+							<p class="mt-1 text-sm text-muted">Origami, SPED, Xuexi &amp; agriculture web platforms.</p>
+							<div class="mt-3 flex flex-wrap gap-1.5">
+								<span class="chip-sm">PHP</span><span class="chip-sm">Laravel</span><span class="chip-sm">CodeIgniter</span>
+							</div>
 						</div>
-					</div>
+					</button>
+
+					<!-- Project 2 -->
+					<button class="project-card reveal text-left" data-modal="modal-java">
+						<div class="project-img">
+							<img src="images/java-app.png" alt="Java Application" loading="lazy">
+						</div>
+						<div class="p-5">
+							<div class="flex items-center justify-between">
+								<h3 class="font-semibold text-white">Records Management System</h3>
+								<i class="fa-solid fa-arrow-up-right-from-square text-muted group-hover:text-accent transition"></i>
+							</div>
+							<p class="mt-1 text-sm text-muted">Java clinic system with SMS alerts — capstone project.</p>
+							<div class="mt-3 flex flex-wrap gap-1.5">
+								<span class="chip-sm">Java</span><span class="chip-sm">NetBeans</span><span class="chip-sm">SMS API</span>
+							</div>
+						</div>
+					</button>
+
+					<!-- Project 3 -->
+					<button class="project-card reveal text-left" data-modal="modal-android">
+						<div class="project-img">
+							<img src="images/android-app.png" alt="Android App" loading="lazy">
+						</div>
+						<div class="p-5">
+							<div class="flex items-center justify-between">
+								<h3 class="font-semibold text-white">Xuexi Android App</h3>
+								<i class="fa-solid fa-arrow-up-right-from-square text-muted group-hover:text-accent transition"></i>
+							</div>
+							<p class="mt-1 text-sm text-muted">Mobile app integrated with a live web API.</p>
+							<div class="mt-3 flex flex-wrap gap-1.5">
+								<span class="chip-sm">Android</span><span class="chip-sm">API</span><span class="chip-sm">Java</span>
+							</div>
+						</div>
+					</button>
 				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/javascript-logo.png" class="skills-logo" alt="javascript logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							Javascript
-						</div>
-					</div>
+			</div>
+		</section>
+
+		<!-- ===================== EDUCATION ===================== -->
+		<section id="education" class="py-20 sm:py-24">
+			<div class="mx-auto max-w-6xl px-5 lg:px-8">
+				<div class="section-head reveal">
+					<span class="section-num">05</span>
+					<h2 class="section-title">Education</h2>
 				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/jquery-logo.png" class="skills-logo" alt="jquery logo">
+				<div class="timeline-card reveal mt-10">
+					<div class="flex items-start gap-4">
+						<div class="h-12 w-12 rounded-lg bg-accent/15 text-accent grid place-items-center flex-shrink-0">
+							<i class="fa-solid fa-graduation-cap text-xl"></i>
 						</div>
-						<div class="card-skill-name has-text-centered">
-							JQuery
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/php-logo.png" class="skills-logo" alt="php logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							PHP
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/mysql-logo.png" class="skills-logo" alt="mysql logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							MySQL
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/codeigniter-logo.png" class="skills-logo" alt="codeigniter logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							CodeIgniter
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/bootstrap-logo.png" class="skills-logo" alt="bootstrap logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							Bootstrap
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/git-logo.png" class="skills-logo" alt="git logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							Git
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/github-logo.png" class="skills-logo" alt="github logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							GitHub
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/wordpress-logo.png" class="skills-logo" alt="wordpress logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							WordPress
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/laravel-logo.png" class="skills-logo" alt="laravel logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							Laravel
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/android-logo.png" class="skills-logo" alt="android logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							Android Studio
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/java-logo.png" class="skills-logo" alt="java logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							Java
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/csharp-logo.png" class="skills-logo" alt="c# logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							C#
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/c++-logo.png" class="skills-logo" alt="c++ logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							C++
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/firebase-logo.png" class="skills-logo" alt="firebase logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							Firebase
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/ionic-logo.png" class="skills-logo" alt="ionic logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							Ionic
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/node-logo.png" class="skills-logo" alt="nodejs logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							Node JS
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-4 col-xs-6">
-					<div class="card">
-						<div class="card-skill-logo round">
-							<img src="images/arduino.png" class="skills-logo" alt="arduino logo">
-						</div>
-						<div class="card-skill-name has-text-centered">
-							Arduino
+						<div>
+							<h3 class="text-lg font-semibold text-white">
+								<a href="https://neust.edu.ph/" target="_blank" rel="noopener" class="hover:text-accent transition">
+									Nueva Ecija University of Science and Technology
+								</a>
+							</h3>
+							<p class="text-sm text-accent font-medium">Bachelor of Science in Information Technology</p>
+							<p class="text-xs font-mono text-muted mt-1">2020 — 2024 · Graduated July 22, 2024</p>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	
-	<section class="section">
-		<div class="container">
-			<h1 class="title">Experience</h1>
-			<hr>
-			<div class="card">
-				<div class="card-content">
-					<div class="media">
-						<div class="media-left">
-							<figure class="image is-48x48">
-								<img src="images/affirm.png" alt="Affirm Technology Inc.">
-							</figure>
-						</div>
-						<div class="media-content">
-							<p class="title is-4"><a href="https://www.affirm-technology.com/" target="_blank">Affirm
-									Technology
-									Inc.</a></p>
-							<p class="subtitle is-6"><b>Web Developer</b> (<time datetime="2024-6">May 2024</time> -
-								<time datetime="present">Present</time>)
-							</p>
-						</div>
-					</div>
-					<div class="content">
-						<p>Affirm is an International Company, established in United States and now headquarters in
-							Singapore, we now have 11 offices over 6 countries and have deployed for over 6000+
-							corporate customers globally. We have more than 20 years of deep industry knowledge with our
-							customers through our certified consultants across the regions. Affirm brings together
-							technology and digital transformation for our clients. We have grown our team to over 400
-							skilled employees to bring technology and solution to our customers.</p>
-						<ul>
-							<li>Fix bugs and implement requested functions.</li>
-							<li>Developed a SPED therapy website for the SPED Education Program.</li>
-						</ul>
-						<div class="tags">
-							<span class="tag">HTML</span>
-							<span class="tag">CSS</span>
-							<span class="tag">Javascript</span>
-							<span class="tag">Jquery</span>
-							<span class="tag">MySQL</span>
-							<span class="tag">PHP</span>
-							<span class="tag">CodeIgniter</span>
-							<span class="tag">Bootstrap</span>
-						</div>
-					</div>
+		</section>
+
+		<!-- ===================== CONTACT ===================== -->
+		<section id="contact" class="py-20 sm:py-28">
+			<div class="mx-auto max-w-3xl px-5 lg:px-8 text-center reveal">
+				<span class="section-num block mb-3">06</span>
+				<h2 class="text-3xl sm:text-4xl font-extrabold text-white">Let's build something</h2>
+				<p class="mt-4 text-muted max-w-xl mx-auto">
+					Open to web, software, and Android development opportunities — freelance or full-time.
+					Have a project or a role in mind? Let's talk.
+				</p>
+				<a href="mailto:roschristopher15@gmail.com"
+					class="mt-8 inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent/90 hover:-translate-y-0.5 transition">
+					<i class="fa-solid fa-paper-plane"></i> Say hello
+				</a>
+
+				<div class="mt-10 flex items-center justify-center gap-6 text-2xl text-muted">
+					<a href="https://github.com/zxcxtopher15" target="_blank" rel="noopener" class="hover:text-white transition" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+					<a href="mailto:roschristopher15@gmail.com" class="hover:text-white transition" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+					<a href="tel:+639364014582" class="hover:text-white transition" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+					<a href="resume.html" class="hover:text-white transition" aria-label="Resume"><i class="fa-regular fa-file-lines"></i></a>
 				</div>
 			</div>
-			<div class="card card-gap">
-				<div class="card-content">
-					<div class="media">
-						<div class="media-left">
-							<figure class="image is-48x48">
-								<img src="images/freelancer.png" alt="freelancer">
-							</figure>
-						</div>
-						<div class="media-content">
-							<p class="title is-4">Freelance Developer</p>
-							<p class="subtitle is-6"><b>Freelance Developer</b> (<time datetime="2019-1">January
-									2019</time> - <time datetime="present">Present</time>)
-							</p>
-						</div>
-					</div>
-					<div class="content">
-						<p>I am a freelance developer, providing customized software solutions and consultancy services
-							to local businesses.</p>
-						<ul>
-							<li>Developed and deployed various applications tailored to client specifications.</li>
-							<li>Worked on troubleshooting and optimizing database connections and server configurations.
-							</li>
-							<li>Collaborated with clients to enhance their business processes through technology.</li>
-						</ul>
-						<div class="tags">
-							<span class="tag">Java</span>
-							<span class="tag">MySQL</span>
-							<span class="tag">Laravel</span>
-							<span class="tag">Android Studio</span>
-							<span class="tag">C#</span>
-							<span class="tag">C++</span>
-							<span class="tag">Java</span>
-							<span class="tag">Arduino</span>
-							<span class="tag">PHP</span>
-							<span class="tag">Firebase</span>
-							<span class="tag">Ionic</span>
-							<span class="tag">Node JS</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+		</section>
+	</main>
 
-	<section class="section">
-		<div class="container">
-			<h1 class="title">Projects</h1>
-			<hr>
-			<div class="columns is-multiline">
-				<div class="column is-4">
-					<div class="card">
-						<div class="card-content">
-							<p class="title is-5">Web System</p>
-							<figure class="image is-3by4">
-								<img class="modal-trigger" data-target="project-1-modal" src="images/website.png" alt="Web System">
-							</figure>
-						</div>
-					</div>
-				</div>
-				<div class="column is-4">
-					<div class="card">
-						<div class="card-content">
-							<p class="title is-5">Java Application</p>
-							<figure class="image is-3by4">
-								<img class="modal-trigger" data-target="project-2-modal" src="images/java-app.png" alt="Java Application">
-							</figure>
-						</div>
-					</div>
-				</div>
-				<div class="column is-4">
-					<div class="card">
-						<div class="card-content">
-							<p class="title is-5">Android App</p>
-							<figure class="image is-3by4">
-								<img class="modal-trigger" data-target="project-3-modal" src="images/android-app.png" alt="Android App">
-							</figure>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-
-	<section class="section">
-		<div class="container">
-			<h1 class="title">Education</h1>
-			<hr>
-			<div class="card">
-				<div class="card-content">
-					<div class="content">
-						<p class="title is-4"><a href="https://neust.edu.ph/">Nueva Ecija University of Science and
-								Technology</a></p>
-						<p class="subtitle is-6 mb-1"><b>Bachelor of Science in Information Technology</b> (<time
-								datetime="2020">2020</time> - <time datetime="2024">2024</time>)
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="section">
-		<div class="container">
-			<h1 class="title">Contact</h1>
-			<hr>
-			<nav class="level">
-				<div class="level-item has-text-centered">
-					<div>
-						<a href="https://github.com/zxcxtopher15" class="icon is-large">
-							<i class="fab fa-2x fa-github"></i>
-						</a>
-						<p class="heading"><a href="https://github.com/zxcxtopher15">github.com/zxcxtopher15</a>
-						</p>
-					</div>
-				</div>
-				<div class="level-item has-text-centered">
-					<div>
-						<a href="mailto:roschristopher15@gmail.com" class="icon is-large">
-							<i class="fas fa-2x fa-envelope"></i>
-						</a>
-						<p class="heading"><a href="mailto:roschristopher15@gmail.com">roschristopher15@gmail.com</a>
-						</p>
-					</div>
-				</div>
-			</nav>
-		</div>
-	</section>
-
-	<div id="project-1-modal" class="modal">
-		<div class="modal-background"></div>
-		<div class="modal-card">
-			<header class="modal-card-head">
-				<p class="modal-card-title">Web System</p>
-				<button class="delete" aria-label="close"></button>
-			</header>
-			<section class="modal-card-body">
-
-				<div id="project-1-modal-carousel" class="carousel">
-					<figure class="image is-3by3 carousel-cell">
-						<img src="images/origamiweb.PNG" alt="Origami Website">
-					</figure>
-					<figure class="image is-6by3 carousel-cell">
-						<img src="images/origami_sped.PNG" alt="Origami SPED">
-					</figure>
-					<figure class="image is-6by3 carousel-cell">
-						<img src="images/xuexiweb.PNG" alt="Xuexi Web">
-					</figure>
-					<figure class="image is-6by3 carousel-cell">
-						<img src="images/agriculture.PNG" alt="Agriculture Website">
-					</figure>
-				</div>
-
-				<div class="content">
-
-					<p><strong>Origami Website:</strong> Contributed to code development, bug fixes, and followed
-						management requests.</p>
-					<p><strong>Origami SPED:</strong> Developed the website independently, focusing on delivering a
-						user-friendly experience.</p>
-					<p><strong>Xuexi Web:</strong> Collaborated on the Android app development, integrating APIs from
-						the website as part of a freelance project.</p>
-					<p><strong>Agriculture Website:</strong> Independently designed and developed the website as a
-						freelance project.</p>
-
-					<div class="tags">
-						<span class="tag">HTML</span>
-						<span class="tag">CSS</span>
-						<span class="tag">JavaScript</span>
-						<span class="tag">jQuery</span>
-						<span class="tag">MySQL</span>
-						<span class="tag">PHP</span>
-						<span class="tag">CodeIgniter</span>
-						<span class="tag">Bootstrap</span>
-						<span class="tag">Laravel</span>
-						<span class="tag">Android Studio</span>
-					</div>
-
-				</div>
-
-			</section>
-
-			<footer class="modal-card-foot">
-				<button class="button is-success bg-blue">Close</button>
-			</footer>
-		</div>
-	</div>
-
-	<div id="project-2-modal" class="modal">
-		<div class="modal-background"></div>
-		<div class="modal-card">
-			<header class="modal-card-head">
-				<p class="modal-card-title">Records Management System - Clinic</p>
-				<button class="delete" aria-label="close"></button>
-			</header>
-			<section class="modal-card-body">
-
-				<div id="project-2-modal-carousel" class="carousel">
-					<figure class="image is-3by3 carousel-cell">
-						<img src="images/java_1.PNG">
-					</figure>
-					<figure class="image is-6by3 carousel-cell">
-						<img src="images/java_2.PNG">
-					</figure>
-					<figure class="image is-6by3 carousel-cell">
-						<img src="images/java_3.PNG">
-					</figure>
-					<figure class="image is-6by3 carousel-cell">
-						<img src="images/java_4.PNG">
-					</figure>
-					<figure class="image is-6by3 carousel-cell">
-						<img src="images/java_5.PNG">
-					</figure>
-				</div>
-
-				<div class="content">
-
-					<p><strong>Capstone Project:</strong> Developed and coded a Records Management System using Java in NetBeans. Integrated SMS API for sending notifications and alerts. Key
-						features include Patients Monitoring, Audit Trail, Attendance Tracking,
-						and Report Generation.</p>
-
-					<div class="tags">
-						<span class="tag">Java</span>
-						<span class="tag">NetBeans</span>
-						<span class="tag">SMS API</span>
-					</div>
-
-				</div>
-
-			</section>
-			<footer class="modal-card-foot">
-				<button class="button is-success bg-blue">Close</button>
-			</footer>
-		</div>
-	</div>
-
-	<div id="project-3-modal" class="modal">
-		<div class="modal-background"></div>
-		<div class="modal-card">
-			<header class="modal-card-head">
-				<p class="modal-card-title">Xuexi Android App</p>
-				<button class="delete" aria-label="close"></button>
-			</header>
-			<section class="modal-card-body">
-
-				<div id="project-3-modal-carousel" class="carousel">
-					<figure class="image is-3by3 carousel-cell">
-						<img src="images/xuexi.jpeg">
-					</figure>
-					<figure class="image is-6by3 carousel-cell">
-						<img src="images/xuexi_1.jpeg">
-					</figure>
-					<figure class="image is-6by3 carousel-cell">
-						<img src="images/xuexi_2.jpeg">
-					</figure>
-				</div>
-
-				<div class="content">
-					<p><strong>Project Description:</strong> Developed the Xuexi Android app utilizing web API for
-						seamless integration with the website. Focused on ensuring a responsive and user-friendly
-						interface while implementing core functionalities.</p>
-
-					<div class="tags">
-						<span class="tag">Android Studio</span>
-						<span class="tag">API Integration</span>
-					</div>
-				</div>
-			</section>
-			<footer class="modal-card-foot">
-				<button class="button is-success bg-blue">Close</button>
-			</footer>
-		</div>
-	</div>
-
-	<footer class="footer bg-grey">
-		<div class="content has-text-centered">
-			<p>
-
-			</p>
+	<!-- ===================== FOOTER ===================== -->
+	<footer class="relative z-10 border-t border-line py-8">
+		<div class="mx-auto max-w-6xl px-5 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted">
+			<p class="font-mono">© <span id="year"></span> John Christopher Olalia</p>
+			<p>Designed &amp; built with <i class="fa-solid fa-heart text-accent"></i> · Tailwind CSS</p>
 		</div>
 	</footer>
 
-	<script src="js/bundle.js"></script>
-	<script src="js/text-effect.js"></script>
+	<!-- ===================== MODALS ===================== -->
+	<div id="modal-web" class="modal" role="dialog" aria-modal="true">
+		<div class="modal-backdrop" data-close></div>
+		<div class="modal-panel">
+			<button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+			<h3 class="modal-title">Web Systems</h3>
+			<div class="modal-gallery">
+				<img src="images/origamiweb.PNG" alt="Origami Website" loading="lazy">
+				<img src="images/origami_sped.PNG" alt="Origami SPED" loading="lazy">
+				<img src="images/xuexiweb.PNG" alt="Xuexi Web" loading="lazy">
+				<img src="images/agriculture.PNG" alt="Agriculture Website" loading="lazy">
+			</div>
+			<div class="space-y-2 text-sm text-muted mt-4">
+				<p><strong class="text-white">Origami Website:</strong> Contributed to development, bug fixes, and feature work following management requests.</p>
+				<p><strong class="text-white">Origami SPED:</strong> Built independently with a focus on a user-friendly experience.</p>
+				<p><strong class="text-white">Xuexi Web:</strong> Integrated the website's APIs into the companion Android app (freelance).</p>
+				<p><strong class="text-white">Agriculture Website:</strong> Designed and developed independently (freelance).</p>
+			</div>
+			<div class="mt-4 flex flex-wrap gap-2">
+				<span class="chip">PHP</span><span class="chip">CodeIgniter</span><span class="chip">Laravel</span><span class="chip">MySQL</span><span class="chip">JavaScript</span><span class="chip">jQuery</span><span class="chip">Bootstrap</span>
+			</div>
+		</div>
+	</div>
 
+	<div id="modal-java" class="modal" role="dialog" aria-modal="true">
+		<div class="modal-backdrop" data-close></div>
+		<div class="modal-panel">
+			<button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+			<h3 class="modal-title">Records Management System — Clinic</h3>
+			<div class="modal-gallery">
+				<img src="images/java_1.PNG" alt="Java app screen 1" loading="lazy">
+				<img src="images/java_2.PNG" alt="Java app screen 2" loading="lazy">
+				<img src="images/java_3.PNG" alt="Java app screen 3" loading="lazy">
+				<img src="images/java_4.PNG" alt="Java app screen 4" loading="lazy">
+				<img src="images/java_5.PNG" alt="Java app screen 5" loading="lazy">
+			</div>
+			<p class="text-sm text-muted mt-4">
+				<strong class="text-white">Capstone project.</strong> A records management system built in Java
+				(NetBeans) with an integrated SMS API for notifications and alerts. Features include patient
+				monitoring, audit trail, attendance tracking, and report generation.
+			</p>
+			<div class="mt-4 flex flex-wrap gap-2">
+				<span class="chip">Java</span><span class="chip">NetBeans</span><span class="chip">SMS API</span>
+			</div>
+		</div>
+	</div>
 
+	<div id="modal-android" class="modal" role="dialog" aria-modal="true">
+		<div class="modal-backdrop" data-close></div>
+		<div class="modal-panel">
+			<button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+			<h3 class="modal-title">Xuexi Android App</h3>
+			<div class="modal-gallery">
+				<img src="images/xuexi.jpeg" alt="Xuexi app 1" loading="lazy">
+				<img src="images/xuexi_1.jpeg" alt="Xuexi app 2" loading="lazy">
+				<img src="images/xuexi_2.jpeg" alt="Xuexi app 3" loading="lazy">
+			</div>
+			<p class="text-sm text-muted mt-4">
+				Android application built to consume the Xuexi website's web API, with a responsive,
+				user-friendly interface and the platform's core functionality.
+			</p>
+			<div class="mt-4 flex flex-wrap gap-2">
+				<span class="chip">Android Studio</span><span class="chip">API Integration</span><span class="chip">Java</span>
+			</div>
+		</div>
+	</div>
 
+	<button id="to-top" class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+	<script src="js/main.js"></script>
 </body>
 
 </html>
